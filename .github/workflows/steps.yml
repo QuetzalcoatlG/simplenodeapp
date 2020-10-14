@@ -12,8 +12,8 @@ jobs:
         FIRST_NAME: Chad
         MIDDLE_NAME: Michael
         LAST_NAME: Crowell
-      run: |
-        echo $MY_VAR $FIRST_NAME $MIDDLE_NAME $LAST_NAME.
+    run: |
+      echo $MY_VAR $FIRST_NAME $MIDDLE_NAME $LAST_NAME.
     - name: My second step
       if: success()
       run: echo "The previous step has finished successfully"
@@ -21,8 +21,7 @@ jobs:
       uses: actions/checkout@v1
       with:
           node-version: 12
-          registry-url: https://npm.pkg.github.com/ # if your publishing your package to npm or github package repo
-		  
+          registry-url: https://npm.pkg.github.com/ # if your publishing your package to npm or github package repo  
     # Reference a specific commit
     - uses: actions/setup-node@0e2f9cd
     # Reference the major version of a release
