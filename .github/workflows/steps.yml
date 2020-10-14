@@ -1,4 +1,4 @@
-    name: steps
+name: steps
 on:
   push:
     branches: [ master ]
