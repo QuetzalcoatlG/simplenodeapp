@@ -7,19 +7,18 @@ on:
 Jobs:
   build:
   runs-on: ${{ matrix.os }}
-    strategy: 
-      matrix:
-        node: [12]
-        os: [macos-latest, windows-latest, ubuntu-18.04]
-        include:
-          - node: 13
-            os: ubuntu-18.04
-            expermiental: true
-    steps:
-    - steps: actions/checkout@v2
-    - name: Use Node.js ${{ matrix.node }}
+  strategy: 
+    matrix:
+      node: [12]
+      os: [macos-latest, windows-latest, ubuntu-18.04]
+      include:
+        - node: 13
+          os: ubuntu-18.04
+          expermiental: true
+  steps:
+  - steps: actions/checkout@v2
     uses: actions/setup-node@v1
-    with:
-      node-version: ${{ matrix.node }}
+      with:
+        node-version: ${{ matrix.node }}
     - run: npm-install
     - run: npm test
