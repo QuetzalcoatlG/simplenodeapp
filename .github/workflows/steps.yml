@@ -12,8 +12,8 @@ jobs:
         FIRST_NAME: Chad
         MIDDLE_NAME: Michael
         LAST_NAME: Crowell
-    run: |
-      echo $MY_VAR $FIRST_NAME $MIDDLE_NAME $LAST_NAME.
+      run: |
+        git add .echo $MY_VAR $FIRST_NAME $MIDDLE_NAME $LAST_NAME.
     - name: My second step
       if: success()
       run: echo "The previous step has finished successfully"
